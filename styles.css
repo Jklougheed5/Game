@@ -66,3 +66,23 @@ h1 {
     border-radius: 50%;
     cursor: pointer;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const stupidSlider = document.querySelector('.stupid-slider');
+    const coolSlider = document.querySelector('.cool-slider');
+    const verticalSlider = document.querySelector('.vertical-slider');
+    const stupidValue = document.querySelector('.stupid-value');
+    const coolValue = document.querySelector('.cool-value');
+
+    stupidSlider.addEventListener('input', (event) => {
+        stupidValue.textContent = event.target.value;
+    });
+
+    coolSlider.addEventListener('input', (event) => {
+        coolValue.textContent = event.target.value;
+    });
+
+    verticalSlider.addEventListener('input', (event) => {
+        const angle = event.target.value;
+        stupidSlider.style.transform = `rotate(${angle}deg)`;
+    });
+});
